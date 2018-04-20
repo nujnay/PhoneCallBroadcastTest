@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.meteor.phone_call_broadcast">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
-    <!--打电话广播-->
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
-    <!--监听电话状态-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -21,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <!--<service android:name=".PhoneService" />-->
+        <!--<service android:name=".IncomingCallService" />-->
         <receiver android:name=".PhoneBroadcastReceiver">
             <intent-filter android:priority="1000">
                 //主动打电话时,发送的广播
